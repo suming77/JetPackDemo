@@ -34,6 +34,7 @@ public class JPImageView extends AppCompatImageView {
 
     public JPImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
     }
 
     //公共静态方法以及要设置的值,第一个参数必须是控件本身，
