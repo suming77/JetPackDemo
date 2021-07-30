@@ -1,0 +1,6 @@
+include ':libcommon'
+include ':libnetwork'
+include ':libnavcomplier'
+include ':libnavannotation'
+include ':app'
+rootProject.name = "JetPackDemo"

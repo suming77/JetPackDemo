@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="tagText"
+            type="java.lang.String" />
+
+        <import type="android.text.TextUtils" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/color_gary"
+        android:text="@{tagText}"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:textColor="@color/color_2f2"
+        android:textSize="@dimen/sp_12"
+        android:visibility="@{TextUtils.isEmpty(tagText)?View.GONE:View.VISIBLE}"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/icon_tag"
+        app:iconGravity="textStart"
+        app:iconPadding="@dimen/dp_4"
+        tools:text="神秘的皮皮虾"
+        app:iconSize="@dimen/dp_12"
+        app:iconTint="@color/color_theme">
+        <!-- app:iconGravity="textStart":icon的位置，跟随文本
+        如果要更改MaterialButton的背景，则必须使用backgroundTint着色
+        按钮仍然有间隔，将主题改为Theme.MaterialComponents.Light.NoActionBar-->
+
+    </com.google.android.material.button.MaterialButton>
+</layout>

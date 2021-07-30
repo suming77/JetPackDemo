@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <!--variable：在布局文件中声明变量user，类型是User-->
+        <variable
+            name="user"
+            type="User" />
+        <!--导入包-->
+        <import type="com.example.jetpackdemo.model.User" />
+    </data>
+
+    <!--1.根布局右键选择convert to data banding layout-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/dp_16"
+        android:paddingRight="@dimen/dp_16">
+
+        <!--ImageView绑定数据的形式并不能通过src="@{user.avatar}绑定，这样是不行的，
+        可以通过在控件中设置静态方法，属性值来绑定数据-->
+        <view.JPImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            app:image_url="@{user.avatar}"
+            app:isCircle="@{true}"
+            tools:src="@mipmap/ic_launcher" />
+
+        <!--@{user.name}绑定数据，即使user.name为空也不会报错，
+        因为data banding在做数据绑定的时候会做强校验和空安全-->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:gravity="center"
+            android:text="@{user.name}"
+            android:textColor="@color/color_333"
+            android:textSize="@dimen/sp_14"
+            android:textStyle="bold" />
+    </LinearLayout>
+</layout>
